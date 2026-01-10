@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: course-platform-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false  # Set this manually to your Netlify URL

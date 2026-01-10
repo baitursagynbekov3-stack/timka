@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-soft-gray-700 font-sans;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::selection {
+    @apply bg-soft-gray-200/70;
+  }
+
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-7 py-3.5 bg-soft-gray-900 text-white rounded-xl font-medium
+           transition-all duration-500 ease-smooth
+           hover:bg-soft-gray-800 hover:shadow-soft-lg
+           hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-soft
+           focus:outline-none focus:ring-2 focus:ring-soft-gray-900/20 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply px-7 py-3.5 bg-transparent border border-soft-gray-200 text-soft-gray-700
+           rounded-xl font-medium transition-all duration-500 ease-smooth
+           hover:border-soft-gray-300 hover:bg-soft-gray-50 hover:shadow-soft
+           focus:outline-none focus:ring-2 focus:ring-soft-gray-200 focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2.5 text-soft-gray-500 font-medium
+           transition-all duration-300 ease-smooth
+           hover:text-soft-gray-900 hover:bg-soft-gray-50 rounded-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-soft-gray-100
+           transition-all duration-500 ease-smooth
+           hover:shadow-soft-lg hover:border-soft-gray-200
+           hover:-translate-y-1;
+  }
+
+  .card-static {
+    @apply bg-white rounded-2xl border border-soft-gray-100 shadow-soft;
+  }
+
+  .input {
+    @apply w-full px-4 py-3.5 bg-soft-gray-50/50 border border-soft-gray-200
+           rounded-xl text-soft-gray-800 placeholder-soft-gray-400
+           transition-all duration-300 ease-smooth outline-none
+           focus:border-soft-gray-400 focus:bg-white
+           focus:ring-4 focus:ring-soft-gray-100
+           hover:border-soft-gray-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-soft-gray-900
+           tracking-tight leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-soft-gray-500 max-w-2xl leading-relaxed;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-soft-gray-900 via-soft-gray-700 to-soft-gray-500;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+}
+
+@layer utilities {
+  /* Scroll Animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+  }
+
+  .slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Animation delays */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
+  .delay-600 { transition-delay: 600ms; }
+
+  /* Text balancing */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Smooth image loading */
+  .img-loading {
+    @apply bg-soft-gray-100 animate-pulse;
+  }
+}
+
+/* Custom scrollbar - minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dee2e6;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth focus transitions */
+*:focus-visible {
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Image optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Print styles for certificates */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
