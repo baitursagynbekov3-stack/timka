@@ -16,11 +16,12 @@ export default function DashboardPage() {
 
   async function fetchDashboardData() {
     const token = getToken();
+    const apiUrl = import.meta.env.VITE_API_URL || '/api';
     try {
       const [enrollmentsRes, certificatesRes, statsRes] = await Promise.all([
-        fetch('/api/users/enrollments', { headers: { 'Authorization': `Bearer ${token}` } }),
-        fetch('/api/certificates', { headers: { 'Authorization': `Bearer ${token}` } }),
-        fetch('/api/users/stats', { headers: { 'Authorization': `Bearer ${token}` } })
+        fetch(`${apiUrl}/users/enrollments`, { headers: { 'Authorization': `Bearer ${token}` } }),
+        fetch(`${apiUrl}/certificates`, { headers: { 'Authorization': `Bearer ${token}` } }),
+        fetch(`${apiUrl}/users/stats`, { headers: { 'Authorization': `Bearer ${token}` } })
       ]);
 
       const [enrollmentsData, certificatesData, statsData] = await Promise.all([

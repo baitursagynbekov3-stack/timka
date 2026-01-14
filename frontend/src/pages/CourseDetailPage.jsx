@@ -26,8 +26,9 @@ export default function CourseDetailPage() {
   }, [isAuthenticated, course]);
 
   async function fetchCourse() {
+    const apiUrl = import.meta.env.VITE_API_URL || '/api';
     try {
-      const response = await fetch(`/api/courses/${id}`);
+      const response = await fetch(`${apiUrl}/courses/${id}`);
       if (!response.ok) {
         navigate('/courses');
         return;
@@ -43,8 +44,9 @@ export default function CourseDetailPage() {
   }
 
   async function checkEnrollment() {
+    const apiUrl = import.meta.env.VITE_API_URL || '/api';
     try {
-      const response = await fetch('/api/users/enrollments', {
+      const response = await fetch(`${apiUrl}/users/enrollments`, {
         headers: { 'Authorization': `Bearer ${getToken()}` }
       });
       const enrollments = await response.json();
@@ -75,8 +77,9 @@ export default function CourseDetailPage() {
   }
 
   async function handleUpdateProgress(newProgress) {
+    const apiUrl = import.meta.env.VITE_API_URL || '/api';
     try {
-      const response = await fetch(`/api/courses/${id}/progress`, {
+      const response = await fetch(`${apiUrl}/courses/${id}/progress`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

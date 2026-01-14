@@ -17,10 +17,11 @@ export default function HomePage() {
   }, [courses, reviews, observeElements]);
 
   async function fetchData() {
+    const apiUrl = import.meta.env.VITE_API_URL || '/api';
     try {
       const [coursesRes, reviewsRes] = await Promise.all([
-        fetch('/api/courses?featured=true'),
-        fetch('/api/reviews?limit=4')
+        fetch(`${apiUrl}/courses?featured=true`),
+        fetch(`${apiUrl}/reviews?limit=4`)
       ]);
 
       const coursesData = await coursesRes.json();

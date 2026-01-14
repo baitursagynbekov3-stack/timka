@@ -21,12 +21,13 @@ export default function CoursesPage() {
 
   async function fetchCourses() {
     setLoading(true);
+    const apiUrl = import.meta.env.VITE_API_URL || '/api';
     try {
       const params = new URLSearchParams();
       if (filter.category) params.append('category', filter.category);
       if (filter.level) params.append('level', filter.level);
 
-      const response = await fetch(`/api/courses?${params.toString()}`);
+      const response = await fetch(`${apiUrl}/courses?${params.toString()}`);
       const data = await response.json();
       setCourses(data);
     } catch (error) {

@@ -13,8 +13,9 @@ export default function CertificatePage() {
   }, [id]);
 
   async function fetchCertificate() {
+    const apiUrl = import.meta.env.VITE_API_URL || '/api';
     try {
-      const response = await fetch(`/api/certificates/${id}`);
+      const response = await fetch(`${apiUrl}/certificates/${id}`);
       if (!response.ok) {
         setError('Certificate not found');
         return;
