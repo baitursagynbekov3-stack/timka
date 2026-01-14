@@ -16,7 +16,7 @@ export default function DashboardPage() {
 
   async function fetchDashboardData() {
     const token = getToken();
-    const apiUrl = import.meta.env.VITE_API_URL || '/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://lumina-backend-h0fi.onrender.com/api';
     try {
       const [enrollmentsRes, certificatesRes, statsRes] = await Promise.all([
         fetch(`${apiUrl}/users/enrollments`, { headers: { 'Authorization': `Bearer ${token}` } }),

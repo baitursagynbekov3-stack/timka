@@ -21,7 +21,7 @@ export default function CoursesPage() {
 
   async function fetchCourses() {
     setLoading(true);
-    const apiUrl = import.meta.env.VITE_API_URL || '/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://lumina-backend-h0fi.onrender.com/api';
     try {
       const params = new URLSearchParams();
       if (filter.category) params.append('category', filter.category);

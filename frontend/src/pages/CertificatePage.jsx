@@ -13,7 +13,7 @@ export default function CertificatePage() {
   }, [id]);
 
   async function fetchCertificate() {
-    const apiUrl = import.meta.env.VITE_API_URL || '/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://lumina-backend-h0fi.onrender.com/api';
     try {
       const response = await fetch(`${apiUrl}/certificates/${id}`);
       if (!response.ok) {

@@ -17,7 +17,7 @@ export default function HomePage() {
   }, [courses, reviews, observeElements]);
 
   async function fetchData() {
-    const apiUrl = import.meta.env.VITE_API_URL || '/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://lumina-backend-h0fi.onrender.com/api';
     try {
       const [coursesRes, reviewsRes] = await Promise.all([
         fetch(`${apiUrl}/courses?featured=true`),

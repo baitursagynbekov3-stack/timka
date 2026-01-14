@@ -26,7 +26,7 @@ export default function CourseDetailPage() {
   }, [isAuthenticated, course]);
 
   async function fetchCourse() {
-    const apiUrl = import.meta.env.VITE_API_URL || '/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://lumina-backend-h0fi.onrender.com/api';
     try {
       const response = await fetch(`${apiUrl}/courses/${id}`);
       if (!response.ok) {
@@ -44,7 +44,7 @@ export default function CourseDetailPage() {
   }
 
   async function checkEnrollment() {
-    const apiUrl = import.meta.env.VITE_API_URL || '/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://lumina-backend-h0fi.onrender.com/api';
     try {
       const response = await fetch(`${apiUrl}/users/enrollments`, {
         headers: { 'Authorization': `Bearer ${getToken()}` }
@@ -77,7 +77,7 @@ export default function CourseDetailPage() {
   }
 
   async function handleUpdateProgress(newProgress) {
-    const apiUrl = import.meta.env.VITE_API_URL || '/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://lumina-backend-h0fi.onrender.com/api';
     try {
       const response = await fetch(`${apiUrl}/courses/${id}/progress`, {
         method: 'PUT',
