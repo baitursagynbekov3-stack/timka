@@ -27,28 +27,28 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-soft-gray-50 flex items-center justify-center py-12 px-6">
+    <div className="min-h-screen bg-soft-gray-50 dark:bg-soft-gray-900 flex items-center justify-center py-12 px-6">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2">
-            <div className="w-10 h-10 bg-soft-gray-900 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">L</span>
+            <div className="w-10 h-10 bg-soft-gray-900 dark:bg-white rounded-xl flex items-center justify-center">
+              <span className="text-white dark:text-soft-gray-900 font-bold text-lg">L</span>
             </div>
-            <span className="text-2xl font-semibold text-soft-gray-900">Lumina</span>
+            <span className="text-2xl font-semibold text-soft-gray-900 dark:text-white">Lumina</span>
           </Link>
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-2xl shadow-xl shadow-soft-gray-200/50 p-8 border border-soft-gray-100">
+        <div className="bg-white dark:bg-soft-gray-800 rounded-2xl shadow-xl shadow-soft-gray-200/50 dark:shadow-soft-gray-900/50 p-8 border border-soft-gray-100 dark:border-soft-gray-700">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-soft-gray-900">Welcome back</h1>
-            <p className="text-soft-gray-500 mt-2">Sign in to continue your learning journey</p>
+            <h1 className="text-2xl font-bold text-soft-gray-900 dark:text-white">Welcome back</h1>
+            <p className="text-soft-gray-500 dark:text-soft-gray-400 mt-2">Sign in to continue your learning journey</p>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-100 rounded-lg text-red-600 text-sm">
+            <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800 rounded-lg text-red-600 dark:text-red-400 text-sm">
               {error}
             </div>
           )}
@@ -56,7 +56,7 @@ export default function LoginPage() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-soft-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-soft-gray-700 dark:text-soft-gray-300 mb-2">
                 Email address
               </label>
               <input
@@ -71,7 +71,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-soft-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-soft-gray-700 dark:text-soft-gray-300 mb-2">
                 Password
               </label>
               <input
@@ -105,16 +105,16 @@ export default function LoginPage() {
           </form>
 
           {/* Demo Account */}
-          <div className="mt-6 p-4 bg-soft-gray-50 rounded-lg">
-            <p className="text-sm text-soft-gray-600 text-center">
+          <div className="mt-6 p-4 bg-soft-gray-50 dark:bg-soft-gray-700/50 rounded-lg">
+            <p className="text-sm text-soft-gray-600 dark:text-soft-gray-300 text-center">
               <span className="font-medium">Demo account:</span> demo@example.com / demo123
             </p>
           </div>
 
           {/* Register Link */}
-          <p className="mt-8 text-center text-soft-gray-500">
+          <p className="mt-8 text-center text-soft-gray-500 dark:text-soft-gray-400">
             Don't have an account?{' '}
-            <Link to="/register" className="text-soft-gray-900 font-medium hover:underline">
+            <Link to="/register" className="text-soft-gray-900 dark:text-white font-medium hover:underline">
               Create one
             </Link>
           </p>
@@ -122,7 +122,7 @@ export default function LoginPage() {
 
         {/* Back to Home */}
         <p className="mt-8 text-center">
-          <Link to="/" className="text-soft-gray-500 hover:text-soft-gray-700 text-sm">
+          <Link to="/" className="text-soft-gray-500 dark:text-soft-gray-400 hover:text-soft-gray-700 dark:hover:text-soft-gray-300 text-sm">
             Back to Home
           </Link>
         </p>

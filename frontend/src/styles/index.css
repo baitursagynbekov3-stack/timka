@@ -12,12 +12,12 @@
   }
 
   body {
-    @apply bg-white text-soft-gray-700 font-sans;
+    @apply bg-white dark:bg-soft-gray-900 text-soft-gray-700 dark:text-soft-gray-300 font-sans;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   ::selection {
-    @apply bg-soft-gray-200/70;
+    @apply bg-soft-gray-200/70 dark:bg-soft-gray-700/70;
   }
 
   * {
@@ -27,63 +27,64 @@
 
 @layer components {
   .btn-primary {
-    @apply px-7 py-3.5 bg-soft-gray-900 text-white rounded-xl font-medium
+    @apply px-7 py-3.5 bg-soft-gray-900 dark:bg-white text-white dark:text-soft-gray-900 rounded-xl font-medium
            transition-all duration-500 ease-smooth
-           hover:bg-soft-gray-800 hover:shadow-soft-lg
+           hover:bg-soft-gray-800 dark:hover:bg-soft-gray-100 hover:shadow-soft-lg
            hover:-translate-y-0.5
            active:translate-y-0 active:shadow-soft
-           focus:outline-none focus:ring-2 focus:ring-soft-gray-900/20 focus:ring-offset-2;
+           focus:outline-none focus:ring-2 focus:ring-soft-gray-900/20 dark:focus:ring-white/20 focus:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply px-7 py-3.5 bg-transparent border border-soft-gray-200 text-soft-gray-700
+    @apply px-7 py-3.5 bg-transparent border border-soft-gray-200 dark:border-soft-gray-700 text-soft-gray-700 dark:text-soft-gray-300
            rounded-xl font-medium transition-all duration-500 ease-smooth
-           hover:border-soft-gray-300 hover:bg-soft-gray-50 hover:shadow-soft
-           focus:outline-none focus:ring-2 focus:ring-soft-gray-200 focus:ring-offset-2;
+           hover:border-soft-gray-300 dark:hover:border-soft-gray-600 hover:bg-soft-gray-50 dark:hover:bg-soft-gray-800 hover:shadow-soft
+           focus:outline-none focus:ring-2 focus:ring-soft-gray-200 dark:focus:ring-soft-gray-700 focus:ring-offset-2;
   }
 
   .btn-ghost {
-    @apply px-4 py-2.5 text-soft-gray-500 font-medium
+    @apply px-4 py-2.5 text-soft-gray-500 dark:text-soft-gray-400 font-medium
            transition-all duration-300 ease-smooth
-           hover:text-soft-gray-900 hover:bg-soft-gray-50 rounded-lg;
+           hover:text-soft-gray-900 dark:hover:text-white hover:bg-soft-gray-50 dark:hover:bg-soft-gray-800 rounded-lg;
   }
 
   .card {
-    @apply bg-white rounded-2xl border border-soft-gray-100
+    @apply bg-white dark:bg-soft-gray-800 rounded-2xl border border-soft-gray-100 dark:border-soft-gray-700
            transition-all duration-500 ease-smooth
-           hover:shadow-soft-lg hover:border-soft-gray-200
+           hover:shadow-soft-lg hover:border-soft-gray-200 dark:hover:border-soft-gray-600
            hover:-translate-y-1;
   }
 
   .card-static {
-    @apply bg-white rounded-2xl border border-soft-gray-100 shadow-soft;
+    @apply bg-white dark:bg-soft-gray-800 rounded-2xl border border-soft-gray-100 dark:border-soft-gray-700 shadow-soft;
   }
 
   .input {
-    @apply w-full px-4 py-3.5 bg-soft-gray-50/50 border border-soft-gray-200
-           rounded-xl text-soft-gray-800 placeholder-soft-gray-400
+    @apply w-full px-4 py-3.5 bg-soft-gray-50/50 dark:bg-soft-gray-800/50 border border-soft-gray-200 dark:border-soft-gray-700
+           rounded-xl text-soft-gray-800 dark:text-soft-gray-200 placeholder-soft-gray-400 dark:placeholder-soft-gray-500
            transition-all duration-300 ease-smooth outline-none
-           focus:border-soft-gray-400 focus:bg-white
-           focus:ring-4 focus:ring-soft-gray-100
-           hover:border-soft-gray-300;
+           focus:border-soft-gray-400 dark:focus:border-soft-gray-500 focus:bg-white dark:focus:bg-soft-gray-800
+           focus:ring-4 focus:ring-soft-gray-100 dark:focus:ring-soft-gray-700
+           hover:border-soft-gray-300 dark:hover:border-soft-gray-600;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-soft-gray-900
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-soft-gray-900 dark:text-white
            tracking-tight leading-tight;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-soft-gray-500 max-w-2xl leading-relaxed;
+    @apply text-lg md:text-xl text-soft-gray-500 dark:text-soft-gray-400 max-w-2xl leading-relaxed;
   }
 
   .gradient-text {
     @apply bg-clip-text text-transparent
-           bg-gradient-to-r from-soft-gray-900 via-soft-gray-700 to-soft-gray-500;
+           bg-gradient-to-r from-soft-gray-900 via-soft-gray-700 to-soft-gray-500
+           dark:from-white dark:via-soft-gray-300 dark:to-soft-gray-500;
   }
 
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+    @apply bg-white/70 dark:bg-soft-gray-800/70 backdrop-blur-xl border border-white/20 dark:border-soft-gray-700/20;
   }
 }
 
