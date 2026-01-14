@@ -143,7 +143,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Courses Section */}
-      <section className="py-28 bg-white dark:bg-soft-gray-900">
+      <section className="py-28 bg-white dark:bg-soft-gray-950">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 slide-up">
             <span className="text-soft-gray-400 uppercase tracking-widest text-sm font-medium">Our Courses</span>
@@ -290,7 +290,7 @@ export default function HomePage() {
       </section>
 
       {/* Certificate Preview Section */}
-      <section className="py-28 bg-white dark:bg-soft-gray-900">
+      <section className="py-28 bg-white dark:bg-soft-gray-950">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Content */}

@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-soft-gray-900 text-soft-gray-700 dark:text-soft-gray-300 font-sans;
+    @apply bg-white dark:bg-soft-gray-950 text-soft-gray-700 dark:text-soft-gray-300 font-sans;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
@@ -49,23 +49,23 @@
   }
 
   .card {
-    @apply bg-white dark:bg-soft-gray-800 rounded-2xl border border-soft-gray-100 dark:border-soft-gray-700
+    @apply bg-white dark:bg-soft-gray-900 rounded-2xl border border-soft-gray-100 dark:border-soft-gray-800
            transition-all duration-500 ease-smooth
-           hover:shadow-soft-lg hover:border-soft-gray-200 dark:hover:border-soft-gray-600
+           hover:shadow-soft-lg hover:border-soft-gray-200 dark:hover:border-soft-gray-700
            hover:-translate-y-1;
   }
 
   .card-static {
-    @apply bg-white dark:bg-soft-gray-800 rounded-2xl border border-soft-gray-100 dark:border-soft-gray-700 shadow-soft;
+    @apply bg-white dark:bg-soft-gray-900 rounded-2xl border border-soft-gray-100 dark:border-soft-gray-800 shadow-soft;
   }
 
   .input {
-    @apply w-full px-4 py-3.5 bg-soft-gray-50/50 dark:bg-soft-gray-800/50 border border-soft-gray-200 dark:border-soft-gray-700
+    @apply w-full px-4 py-3.5 bg-soft-gray-50/50 dark:bg-soft-gray-900/50 border border-soft-gray-200 dark:border-soft-gray-800
            rounded-xl text-soft-gray-800 dark:text-soft-gray-200 placeholder-soft-gray-400 dark:placeholder-soft-gray-500
            transition-all duration-300 ease-smooth outline-none
-           focus:border-soft-gray-400 dark:focus:border-soft-gray-500 focus:bg-white dark:focus:bg-soft-gray-800
-           focus:ring-4 focus:ring-soft-gray-100 dark:focus:ring-soft-gray-700
-           hover:border-soft-gray-300 dark:hover:border-soft-gray-600;
+           focus:border-soft-gray-400 dark:focus:border-soft-gray-600 focus:bg-white dark:focus:bg-soft-gray-900
+           focus:ring-4 focus:ring-soft-gray-100 dark:focus:ring-soft-gray-800
+           hover:border-soft-gray-300 dark:hover:border-soft-gray-700;
   }
 
   .section-title {
