@@ -39,29 +39,29 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
         {/* Soft gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-soft-gray-50 via-white to-warm-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-soft-gray-50 via-white to-warm-50 dark:from-soft-gray-900 dark:via-soft-gray-900 dark:to-soft-gray-800"></div>
 
         {/* Decorative blobs */}
-        <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-soft-gray-100/40 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-warm-100/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-soft-gray-100/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-soft-gray-100/40 dark:bg-soft-gray-800/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-warm-100/30 dark:bg-soft-gray-700/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-soft-gray-100/20 dark:bg-soft-gray-800/20 rounded-full blur-3xl"></div>
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             {/* Left Content */}
             <div className="slide-left">
-              <span className="inline-flex items-center px-4 py-2 bg-soft-gray-100/80 text-soft-gray-600 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+              <span className="inline-flex items-center px-4 py-2 bg-soft-gray-100/80 dark:bg-soft-gray-800/80 text-soft-gray-600 dark:text-soft-gray-300 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                 Premium Online Education
               </span>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-soft-gray-900 leading-[1.1] tracking-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-soft-gray-900 dark:text-white leading-[1.1] tracking-tight">
                 Learn Skills
                 <br />
                 <span className="text-soft-gray-400">That Matter</span>
               </h1>
 
-              <p className="mt-8 text-xl text-soft-gray-500 leading-relaxed max-w-lg">
+              <p className="mt-8 text-xl text-soft-gray-500 dark:text-soft-gray-400 leading-relaxed max-w-lg">
                 Professional online courses crafted by industry experts.
                 Earn recognized certificates and transform your career.
               </p>
@@ -83,7 +83,7 @@ export default function HomePage() {
                   { value: '95%', label: 'Satisfaction' }
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
-                    <p className="text-3xl font-bold text-soft-gray-900">{stat.value}</p>
+                    <p className="text-3xl font-bold text-soft-gray-900 dark:text-white">{stat.value}</p>
                     <p className="text-soft-gray-400 text-sm mt-1">{stat.label}</p>
                   </div>
                 ))}
@@ -94,7 +94,7 @@ export default function HomePage() {
             <div className="slide-right hidden lg:block">
               <div className="relative">
                 {/* Background decoration */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-soft-gray-100 to-warm-100 rounded-[2rem] transform rotate-2 opacity-60"></div>
+                <div className="absolute -inset-4 bg-gradient-to-br from-soft-gray-100 to-warm-100 dark:from-soft-gray-800 dark:to-soft-gray-700 rounded-[2rem] transform rotate-2 opacity-60"></div>
 
                 {/* Main image */}
                 <img
@@ -104,29 +104,29 @@ export default function HomePage() {
                 />
 
                 {/* Floating card */}
-                <div className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-soft-lg border border-soft-gray-100 animate-float">
+                <div className="absolute -bottom-6 -left-6 bg-white dark:bg-soft-gray-800 p-5 rounded-2xl shadow-soft-lg border border-soft-gray-100 dark:border-soft-gray-700 animate-float">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-50 dark:bg-green-900/30 rounded-xl flex items-center justify-center">
                       <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-soft-gray-900">Certificate Earned</p>
+                      <p className="font-semibold text-soft-gray-900 dark:text-white">Certificate Earned</p>
                       <p className="text-sm text-soft-gray-400">Web Development</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Second floating element */}
-                <div className="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-xl shadow-soft-lg border border-soft-gray-100" style={{ animationDelay: '1s' }}>
+                <div className="absolute -top-4 -right-4 bg-white dark:bg-soft-gray-800 px-5 py-3 rounded-xl shadow-soft-lg border border-soft-gray-100 dark:border-soft-gray-700" style={{ animationDelay: '1s' }}>
                   <div className="flex items-center gap-2">
                     <div className="flex -space-x-2">
                       {[1, 2, 3].map((i) => (
-                        <div key={i} className="w-8 h-8 rounded-full bg-soft-gray-200 border-2 border-white"></div>
+                        <div key={i} className="w-8 h-8 rounded-full bg-soft-gray-200 dark:bg-soft-gray-600 border-2 border-white dark:border-soft-gray-800"></div>
                       ))}
                     </div>
-                    <span className="text-sm text-soft-gray-600 font-medium">+2.5k enrolled</span>
+                    <span className="text-sm text-soft-gray-600 dark:text-soft-gray-300 font-medium">+2.5k enrolled</span>
                   </div>
                 </div>
               </div>
@@ -136,14 +136,14 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg className="w-6 h-6 text-soft-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-soft-gray-300 dark:text-soft-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
       </section>
 
       {/* Featured Courses Section */}
-      <section className="py-28 bg-white">
+      <section className="py-28 bg-white dark:bg-soft-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 slide-up">
             <span className="text-soft-gray-400 uppercase tracking-widest text-sm font-medium">Our Courses</span>
@@ -160,7 +160,7 @@ export default function HomePage() {
                 to={`/courses/${course.id}`}
                 className={`card p-0 overflow-hidden group slide-up delay-${(index + 1) * 100}`}
               >
-                <div className="aspect-[4/3] overflow-hidden bg-soft-gray-100">
+                <div className="aspect-[4/3] overflow-hidden bg-soft-gray-100 dark:bg-soft-gray-700">
                   <img
                     src={course.image}
                     alt={course.title}
@@ -171,15 +171,15 @@ export default function HomePage() {
                   <span className="text-xs text-soft-gray-400 uppercase tracking-wider font-medium">
                     {course.category}
                   </span>
-                  <h3 className="font-semibold text-soft-gray-900 mt-2 group-hover:text-soft-gray-600 transition-colors duration-300">
+                  <h3 className="font-semibold text-soft-gray-900 dark:text-white mt-2 group-hover:text-soft-gray-600 dark:group-hover:text-soft-gray-300 transition-colors duration-300">
                     {course.title}
                   </h3>
-                  <p className="text-sm text-soft-gray-500 mt-2 line-clamp-2 leading-relaxed">
+                  <p className="text-sm text-soft-gray-500 dark:text-soft-gray-400 mt-2 line-clamp-2 leading-relaxed">
                     {course.short_description}
                   </p>
-                  <div className="flex items-center justify-between mt-5 pt-5 border-t border-soft-gray-100">
+                  <div className="flex items-center justify-between mt-5 pt-5 border-t border-soft-gray-100 dark:border-soft-gray-700">
                     <span className="text-sm text-soft-gray-400">{course.duration}</span>
-                    <span className="font-semibold text-soft-gray-900">${course.price}</span>
+                    <span className="font-semibold text-soft-gray-900 dark:text-white">${course.price}</span>
                   </div>
                 </div>
               </Link>
@@ -198,12 +198,12 @@ export default function HomePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-28 bg-soft-gray-50/50">
+      <section className="py-28 bg-soft-gray-50/50 dark:bg-soft-gray-800/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Image */}
             <div className="slide-left relative">
-              <div className="absolute -inset-4 bg-gradient-to-tr from-soft-gray-100 to-warm-100 rounded-[2rem] opacity-50"></div>
+              <div className="absolute -inset-4 bg-gradient-to-tr from-soft-gray-100 to-warm-100 dark:from-soft-gray-700 dark:to-soft-gray-600 rounded-[2rem] opacity-50"></div>
               <img
                 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80"
                 alt="Learning benefits"
@@ -211,15 +211,15 @@ export default function HomePage() {
               />
 
               {/* Stats card */}
-              <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-soft-lg border border-soft-gray-100">
+              <div className="absolute -bottom-8 -right-8 bg-white dark:bg-soft-gray-800 p-6 rounded-2xl shadow-soft-lg border border-soft-gray-100 dark:border-soft-gray-700">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-soft-gray-900 rounded-xl flex items-center justify-center">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-14 h-14 bg-soft-gray-900 dark:bg-white rounded-xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-white dark:text-soft-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-soft-gray-900">89%</p>
+                    <p className="text-2xl font-bold text-soft-gray-900 dark:text-white">89%</p>
                     <p className="text-soft-gray-400 text-sm">Career growth</p>
                   </div>
                 </div>
@@ -274,12 +274,12 @@ export default function HomePage() {
                   }
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start gap-5 group">
-                    <div className="flex-shrink-0 w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-soft-gray-500 shadow-soft border border-soft-gray-100 group-hover:shadow-soft-lg group-hover:border-soft-gray-200 transition-all duration-300">
+                    <div className="flex-shrink-0 w-14 h-14 bg-white dark:bg-soft-gray-700 rounded-2xl flex items-center justify-center text-soft-gray-500 dark:text-soft-gray-300 shadow-soft border border-soft-gray-100 dark:border-soft-gray-600 group-hover:shadow-soft-lg group-hover:border-soft-gray-200 dark:group-hover:border-soft-gray-500 transition-all duration-300">
                       {benefit.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-soft-gray-900 text-lg">{benefit.title}</h3>
-                      <p className="text-soft-gray-500 mt-1 leading-relaxed">{benefit.description}</p>
+                      <h3 className="font-semibold text-soft-gray-900 dark:text-white text-lg">{benefit.title}</h3>
+                      <p className="text-soft-gray-500 dark:text-soft-gray-400 mt-1 leading-relaxed">{benefit.description}</p>
                     </div>
                   </div>
                 ))}
@@ -290,7 +290,7 @@ export default function HomePage() {
       </section>
 
       {/* Certificate Preview Section */}
-      <section className="py-28 bg-white">
+      <section className="py-28 bg-white dark:bg-soft-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Content */}
@@ -309,12 +309,12 @@ export default function HomePage() {
                   'Recognized by industry professionals'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-soft-gray-100 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3.5 h-3.5 text-soft-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-6 h-6 rounded-full bg-soft-gray-100 dark:bg-soft-gray-700 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-3.5 h-3.5 text-soft-gray-600 dark:text-soft-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-soft-gray-600">{item}</span>
+                    <span className="text-soft-gray-600 dark:text-soft-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -330,31 +330,31 @@ export default function HomePage() {
             {/* Certificate Preview */}
             <div className="order-1 lg:order-2 slide-right">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-soft-gray-100 to-warm-100 rounded-[2rem] transform -rotate-2 opacity-60"></div>
-                <div className="relative bg-white p-10 rounded-3xl shadow-soft-xl border border-soft-gray-100">
+                <div className="absolute inset-0 bg-gradient-to-br from-soft-gray-100 to-warm-100 dark:from-soft-gray-700 dark:to-soft-gray-600 rounded-[2rem] transform -rotate-2 opacity-60"></div>
+                <div className="relative bg-white dark:bg-soft-gray-800 p-10 rounded-3xl shadow-soft-xl border border-soft-gray-100 dark:border-soft-gray-700">
                   <div className="text-center">
                     {/* Logo */}
-                    <div className="w-16 h-16 bg-soft-gray-900 rounded-2xl mx-auto flex items-center justify-center mb-8">
-                      <span className="text-white font-bold text-2xl">L</span>
+                    <div className="w-16 h-16 bg-soft-gray-900 dark:bg-white rounded-2xl mx-auto flex items-center justify-center mb-8">
+                      <span className="text-white dark:text-soft-gray-900 font-bold text-2xl">L</span>
                     </div>
 
                     <p className="text-soft-gray-400 uppercase tracking-[0.25em] text-xs font-medium mb-3">
                       Certificate of Completion
                     </p>
 
-                    <h3 className="text-3xl font-bold text-soft-gray-900 mb-2">John Anderson</h3>
+                    <h3 className="text-3xl font-bold text-soft-gray-900 dark:text-white mb-2">John Anderson</h3>
                     <p className="text-soft-gray-400 mb-8">has successfully completed</p>
 
-                    <p className="text-xl font-semibold text-soft-gray-800 mb-8">Modern Web Development</p>
+                    <p className="text-xl font-semibold text-soft-gray-800 dark:text-soft-gray-200 mb-8">Modern Web Development</p>
 
                     <div className="flex items-center justify-center gap-3 mb-8">
-                      <div className="h-px w-12 bg-soft-gray-200"></div>
-                      <div className="w-2 h-2 rounded-full bg-soft-gray-200"></div>
-                      <div className="h-px w-12 bg-soft-gray-200"></div>
+                      <div className="h-px w-12 bg-soft-gray-200 dark:bg-soft-gray-600"></div>
+                      <div className="w-2 h-2 rounded-full bg-soft-gray-200 dark:bg-soft-gray-600"></div>
+                      <div className="h-px w-12 bg-soft-gray-200 dark:bg-soft-gray-600"></div>
                     </div>
 
                     <p className="text-sm text-soft-gray-400">January 2025</p>
-                    <p className="text-xs text-soft-gray-300 mt-2 font-mono">CERT-XK9M2-ABCD</p>
+                    <p className="text-xs text-soft-gray-300 dark:text-soft-gray-500 mt-2 font-mono">CERT-XK9M2-ABCD</p>
                   </div>
                 </div>
               </div>
@@ -364,7 +364,7 @@ export default function HomePage() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-28 bg-soft-gray-50/50">
+      <section className="py-28 bg-soft-gray-50/50 dark:bg-soft-gray-800/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 slide-up">
             <span className="text-soft-gray-400 uppercase tracking-widest text-sm font-medium">Testimonials</span>
@@ -378,14 +378,14 @@ export default function HomePage() {
             {reviews.map((review, index) => (
               <div
                 key={review.id}
-                className={`bg-white p-7 rounded-2xl border border-soft-gray-100 shadow-soft hover:shadow-soft-lg transition-all duration-500 slide-up delay-${(index + 1) * 100}`}
+                className={`bg-white dark:bg-soft-gray-800 p-7 rounded-2xl border border-soft-gray-100 dark:border-soft-gray-700 shadow-soft hover:shadow-soft-lg transition-all duration-500 slide-up delay-${(index + 1) * 100}`}
               >
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-5">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className={`w-4 h-4 ${i < review.rating ? 'text-amber-400' : 'text-soft-gray-200'}`}
+                      className={`w-4 h-4 ${i < review.rating ? 'text-amber-400' : 'text-soft-gray-200 dark:text-soft-gray-600'}`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -395,19 +395,19 @@ export default function HomePage() {
                 </div>
 
                 {/* Quote */}
-                <p className="text-soft-gray-600 leading-relaxed mb-6">
+                <p className="text-soft-gray-600 dark:text-soft-gray-300 leading-relaxed mb-6">
                   "{review.comment}"
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-3 pt-5 border-t border-soft-gray-100">
-                  <div className="w-10 h-10 bg-soft-gray-100 rounded-full flex items-center justify-center">
-                    <span className="text-soft-gray-500 font-medium text-sm">
+                <div className="flex items-center gap-3 pt-5 border-t border-soft-gray-100 dark:border-soft-gray-700">
+                  <div className="w-10 h-10 bg-soft-gray-100 dark:bg-soft-gray-700 rounded-full flex items-center justify-center">
+                    <span className="text-soft-gray-500 dark:text-soft-gray-300 font-medium text-sm">
                       {review.user_name?.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <p className="font-medium text-soft-gray-900 text-sm">{review.user_name}</p>
+                    <p className="font-medium text-soft-gray-900 dark:text-white text-sm">{review.user_name}</p>
                     <p className="text-soft-gray-400 text-xs">{review.course_title}</p>
                   </div>
                 </div>
