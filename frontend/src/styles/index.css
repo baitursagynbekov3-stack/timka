@@ -20,9 +20,6 @@
     @apply bg-soft-gray-200/70 dark:bg-soft-gray-700/70;
   }
 
-  * {
-    @apply transition-colors duration-200;
-  }
 }
 
 @layer components {
