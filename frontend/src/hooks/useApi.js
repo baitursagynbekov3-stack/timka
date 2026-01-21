@@ -76,8 +76,8 @@ export function useScrollAnimation() {
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: '-10% 0px -10% 0px'  // Trigger when 10% from top/bottom edges
+        threshold: 0,
+        rootMargin: '-20% 0px -20% 0px'  // Wider buffer zone to prevent flickering
       }
     );
 
