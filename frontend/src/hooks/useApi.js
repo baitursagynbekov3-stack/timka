@@ -64,27 +64,50 @@ export function useApi() {
 
 export function useScrollAnimation() {
   const observeElements = useCallback(() => {
+    let isScrolling = false;
+    let scrollTimeout = null;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-          } else {
-            // Remove visible class when element leaves viewport (top or bottom)
+          } else if (isScrolling) {
+            // Only remove visible class while actively scrolling
             entry.target.classList.remove('visible');
           }
         });
       },
       {
         threshold: 0,
-        rootMargin: '-20% 0px -20% 0px'  // Wider buffer zone to prevent flickering
+        rootMargin: '-15% 0px -15% 0px'
       }
     );
+
+    const handleScroll = () => {
+      isScrolling = true;
+
+      // Clear previous timeout
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      // Set scrolling to false after 150ms of no scroll
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 150);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     const elements = document.querySelectorAll('.slide-left, .slide-right, .slide-up, .animate-on-scroll, .scale-in');
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
   }, []);
 
   return { observeElements };
