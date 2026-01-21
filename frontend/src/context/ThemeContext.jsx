@@ -21,15 +21,15 @@ export function ThemeProvider({ children }) {
   const toggleDarkMode = useCallback(() => {
     setIsTransitioning(true);
 
-    // Wait for fade overlay to appear, then switch theme
+    // Wait for overlay to fully cover screen, then switch theme
     setTimeout(() => {
       setDarkMode(prev => !prev);
+    }, 200);
 
-      // Wait a bit then fade out
-      setTimeout(() => {
-        setIsTransitioning(false);
-      }, 150);
-    }, 150);
+    // Hold overlay, then fade out after theme has applied
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 400);
   }, []);
 
   return (
@@ -37,13 +37,13 @@ export function ThemeProvider({ children }) {
       {children}
       {/* Smooth transition overlay */}
       <div
-        className={`fixed inset-0 pointer-events-none z-[9999] transition-opacity duration-150 ${
+        className={`fixed inset-0 pointer-events-none z-[9999] transition-opacity duration-200 ease-in-out ${
           isTransitioning
             ? 'opacity-100'
             : 'opacity-0'
         }`}
         style={{
-          backgroundColor: darkMode ? '#fafbfc' : '#050505'
+          backgroundColor: '#000000'
         }}
       />
     </ThemeContext.Provider>
