@@ -66,15 +66,32 @@ export function useScrollAnimation() {
   const observeElements = useCallback(() => {
     let isScrolling = false;
     let scrollTimeout = null;
+    const animatingElements = new Set();
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const el = entry.target;
+
+          // Don't interrupt if element is currently animating
+          if (animatingElements.has(el)) return;
+
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            if (!el.classList.contains('visible')) {
+              animatingElements.add(el);
+              el.classList.add('visible');
+
+              // Lock for animation duration (match CSS transition time)
+              setTimeout(() => animatingElements.delete(el), 800);
+            }
           } else if (isScrolling) {
-            // Only remove visible class while actively scrolling
-            entry.target.classList.remove('visible');
+            if (el.classList.contains('visible')) {
+              animatingElements.add(el);
+              el.classList.remove('visible');
+
+              // Lock for animation duration
+              setTimeout(() => animatingElements.delete(el), 800);
+            }
           }
         });
       },
@@ -87,12 +104,10 @@ export function useScrollAnimation() {
     const handleScroll = () => {
       isScrolling = true;
 
-      // Clear previous timeout
       if (scrollTimeout) {
         clearTimeout(scrollTimeout);
       }
 
-      // Set scrolling to false after 150ms of no scroll
       scrollTimeout = setTimeout(() => {
         isScrolling = false;
       }, 150);
