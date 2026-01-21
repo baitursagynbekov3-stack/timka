@@ -69,6 +69,9 @@ export function useScrollAnimation() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+          } else {
+            // Remove visible class when element leaves viewport
+            entry.target.classList.remove('visible');
           }
         });
       },
