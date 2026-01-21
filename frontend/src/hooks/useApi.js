@@ -70,15 +70,18 @@ export function useScrollAnimation() {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
           } else {
-            // Remove visible class when element leaves viewport
+            // Remove visible class when element leaves viewport (top or bottom)
             entry.target.classList.remove('visible');
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      {
+        threshold: 0.15,
+        rootMargin: '-10% 0px -10% 0px'  // Trigger when 10% from top/bottom edges
+      }
     );
 
-    const elements = document.querySelectorAll('.slide-left, .slide-right, .slide-up, .animate-on-scroll');
+    const elements = document.querySelectorAll('.slide-left, .slide-right, .slide-up, .animate-on-scroll, .scale-in');
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
